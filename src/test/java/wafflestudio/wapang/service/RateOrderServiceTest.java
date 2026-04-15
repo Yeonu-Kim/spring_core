@@ -2,10 +2,8 @@ package wafflestudio.wapang.service;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import wafflestudio.wapang.AppConfig;
+import wafflestudio.wapang.config.AppConfig;
 import wafflestudio.wapang.domain.*;
-import wafflestudio.wapang.repository.MemberRepository;
-import wafflestudio.wapang.repository.MemoryMemberRepository;
 
 public class RateOrderServiceTest {
     AppConfig appConfig = new AppConfig();
