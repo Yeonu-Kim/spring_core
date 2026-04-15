@@ -1,9 +1,6 @@
-package wafflestudio.wapang.service;
+package wafflestudio.wapang.domain;
 
 import org.junit.jupiter.api.Test;
-import wafflestudio.wapang.domain.Grade;
-import wafflestudio.wapang.domain.Member;
-import wafflestudio.wapang.domain.RateDiscountPolicy;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
