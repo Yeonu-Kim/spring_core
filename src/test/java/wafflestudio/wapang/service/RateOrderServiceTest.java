@@ -2,15 +2,15 @@ package wafflestudio.wapang.service;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import wafflestudio.wapang.AppConfig;
 import wafflestudio.wapang.domain.*;
 import wafflestudio.wapang.repository.MemberRepository;
 import wafflestudio.wapang.repository.MemoryMemberRepository;
 
 public class RateOrderServiceTest {
-    DiscountPolicy discountPolicy = new RateDiscountPolicy();
-    MemberRepository memberRepository = new MemoryMemberRepository();
-    MemberService memberService = new MemberServiceImpl(memberRepository);
-    OrderService orderService = new OrderServiceImpl(memberRepository, discountPolicy);
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService = appConfig.memberService();
+    OrderService orderService = appConfig.orderService();
 
     @Test
     void createOrder() {
@@ -18,8 +18,8 @@ public class RateOrderServiceTest {
         Member member = new Member(memberId, "memberA", Grade.VIP);
         memberService.join(member);
 
-        Order order = orderService.createOrder(memberId, "itemA", 10000);
-        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
-        Assertions.assertThat(order.getTotalPrice()).isEqualTo(9000);
+        Order order = orderService.createOrder(memberId, "itemA", 100000);
+        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(10000);
+        Assertions.assertThat(order.getTotalPrice()).isEqualTo(90000);
     }
 }
