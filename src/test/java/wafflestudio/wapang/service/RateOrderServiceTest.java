@@ -6,8 +6,8 @@ import wafflestudio.wapang.domain.*;
 import wafflestudio.wapang.repository.MemberRepository;
 import wafflestudio.wapang.repository.MemoryMemberRepository;
 
-public class OrderServiceTest {
-    DiscountPolicy discountPolicy = new FixDiscountPolicy();
+public class RateOrderServiceTest {
+    DiscountPolicy discountPolicy = new RateDiscountPolicy();
     MemberRepository memberRepository = new MemoryMemberRepository();
     MemberService memberService = new MemberServiceImpl(memberRepository);
     OrderService orderService = new OrderServiceImpl(memberRepository, discountPolicy);
