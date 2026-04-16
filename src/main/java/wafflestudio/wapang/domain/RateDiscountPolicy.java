@@ -1,5 +1,8 @@
 package wafflestudio.wapang.domain;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class RateDiscountPolicy implements DiscountPolicy {
     private int DISCOUNT_RATE = 10;
 
