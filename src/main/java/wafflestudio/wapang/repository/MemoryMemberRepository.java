@@ -1,5 +1,6 @@
 package wafflestudio.wapang.repository;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import wafflestudio.wapang.domain.Member;
 

@@ -2,13 +2,17 @@ package wafflestudio.wapang.service;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import wafflestudio.wapang.config.AppConfig;
 import wafflestudio.wapang.domain.*;
 
+@SpringBootTest
 public class RateOrderServiceTest {
-    AppConfig appConfig = new AppConfig();
-    MemberService memberService = appConfig.memberService();
-    OrderService orderService = appConfig.orderService();
+    @Autowired
+    private MemberService memberService;
+    @Autowired
+    private OrderService orderService;
 
     @Test
     void createOrder() {
