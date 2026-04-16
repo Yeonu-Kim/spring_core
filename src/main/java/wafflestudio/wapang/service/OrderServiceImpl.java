@@ -9,11 +9,15 @@ import wafflestudio.wapang.domain.Order;
 import wafflestudio.wapang.repository.MemberRepository;
 
 @Component
-@RequiredArgsConstructor
-@RateDiscountPolicy
 public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
+
+    public OrderServiceImpl(MemberRepository memberRepository,
+                            @RateDiscountPolicy DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long id, String itemName, int itemPrice) {

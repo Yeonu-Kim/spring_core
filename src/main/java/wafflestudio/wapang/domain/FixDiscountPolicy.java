@@ -1,9 +1,5 @@
 package wafflestudio.wapang.domain;
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
-
-@Component
 public class FixDiscountPolicy implements DiscountPolicy{
     final private int VIP_DISCOUNT_AMOUNT = 1000;
     @Override
